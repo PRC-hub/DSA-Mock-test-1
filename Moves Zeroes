@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class MovesZeroes
+{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of elements: ");
+        int num = scanner.nextInt();    
+        int[] nums = new int[num];
+        System.out.println("Enter the elements:");
+        for (int i = 0; i < num; i++) {
+           nums[i] = scanner.nextInt();
+        }   
+        int n = nums.length;
+        int insertPos = 0;
+        for (int number : nums) {
+            if (number != 0) {
+                nums[insertPos] = number;
+                insertPos++;
+            }
+        }
+        while (insertPos < n) {
+            nums[insertPos] = 0;
+            insertPos++;
+        }    
+        System.out.println("Resulting array:");
+        for (int number : nums) {
+            System.out.print(number + " ");
+        }
+    }
+}
